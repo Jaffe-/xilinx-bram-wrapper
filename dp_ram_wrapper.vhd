@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.common.all;
 use ieee.math_real.all;
 
 entity dp_ram_wrapper is
@@ -99,6 +98,7 @@ begin
       rd_arr(i)   <= this_rd;
       this_wraddr <= wraddr - BANK_START(i);
       this_rdaddr <= rdaddr - BANK_START(i);
+
       i_ram : entity work.dp_ram
         generic map (
           ELEMENTS     => SIZE,
